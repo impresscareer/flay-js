@@ -24,8 +24,8 @@ class Flay
          "Run flay in javascript mode",
          "  (in addition to *.js process javascript fragments in *.erb and *.haml ") do
       @@plugins = %w(js haml erb)
-      alias_method :null_erb, :process_erb
       alias_method :process_erb, :do_erb
+      alias_method :null_erb, :process_erb
       alias_method :sexp_to_erb, :sexp_to_js
       alias_method :null_haml, :process_haml if respond_to? :process_haml
       alias_method :process_haml, :do_haml
